@@ -1,3 +1,5 @@
+package model;
+
 public class Dolar extends Moeda{
     private static final double USD_BRL = 5.38;
 

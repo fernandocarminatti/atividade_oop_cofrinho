@@ -1,3 +1,5 @@
+package model;
+
 public class Euro extends Moeda{
     private static final double EUR_BRL = 6.23;
 
@@ -7,7 +9,7 @@ public class Euro extends Moeda{
 
     @Override
     public String info() {
-        return String.format("Euro: %.2f", this.valor);
+        return String.format("model.Euro: %.2f", this.valor);
     }
 
     @Override

@@ -1,3 +1,7 @@
+package app;
+
+import model.*;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -108,7 +112,7 @@ public class Menu {
                 System.out.println("Tipo de moeda inválido!");
                 return;
         }
-        // A remoção vai funcionar por causa do método 'equals' que implementamos na classe Moeda
+        // A remoção vai funcionar por causa do método 'equals' implementado na classe Moeda
         boolean removido = cofrinho.remover(moedaToRemove);
         if (removido) {
             System.out.println("Moeda removida com sucesso!");

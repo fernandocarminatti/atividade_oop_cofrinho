@@ -4,6 +4,13 @@ Este é um projeto simples em Java que simula um cofrinho de moedas. Foi desenvo
 
 O objetivo principal é demonstrar o uso de conceitos fundamentais de POO, como **Herança** e **Polimorfismo**.
 
+## Estrutura do Projeto
+
+O código-fonte está localizado na pasta `src` e está organizado nos seguintes pacotes:
+
+-   `app`: Contém as classes responsáveis pela execução e interface com o usuário (`Main.java`, `Menu.java`).
+-   `model`: Contém as classes que representam a lógica de negócio do cofrinho (`Cofrinho.java`, `Moeda.java`, e suas subclasses `Dolar`, `Euro`, e `Real`).
+
 ## Funcionalidades
 
 O programa oferece um menu de console com as seguintes opções:
@@ -17,52 +24,58 @@ O programa oferece um menu de console com as seguintes opções:
 -   **Linguagem:** Java
 -   **Princípios de POO:** Herança, Polimorfismo, Encapsulamento.
 -   **Estrutura de Dados:** `ArrayList` para armazenar a coleção de moedas.
--   **IDE Recomendada:** Eclipse ou IntelliJ IDEA.
 
 ## Pré-requisitos
 
-Antes de começar, certifique-se de ter instalado em sua máquina:
 -   [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/downloads/) (versão 8 ou superior).
--   Uma IDE Java, como [Eclipse](https://www.eclipse.org/downloads/) ou [IntelliJ IDEA](https://www.jetbrains.com/idea/download/).
--   [Git](https://git-scm.com/downloads).
+
+---
 
 ## Como Executar o Projeto
 
-Siga os passos abaixo para clonar e executar o projeto em sua IDE de preferência.
+Para executar, primeiro descompacte o arquivo `.zip` em uma pasta de sua escolha. Existem duas maneiras de executar o projeto:
 
-### 1. Clone o Repositório
+### Opção 1: Executando em um IDE (Recomendado)
 
-Abra seu terminal ou Git Bash e execute o seguinte comando para clonar o projeto:
-```bash
-git clone git@github.com:fernandocarminatti/atividade_oop_cofrinho.git
-```
+Este é o método mais simples. O projeto não possui dependências externas.
 
-### 2. Abra o Projeto na sua IDE
+#### Para IntelliJ IDEA:
+1.  Na tela de boas-vindas, clique em **Open**.
+2.  Navegue e selecione a pasta do projeto que você descompactou. O IntelliJ irá configurar o projeto automaticamente.
+3.  Localize o arquivo `Main.java` dentro de `src/app`.
+4.  Clique com o botão direito no arquivo e selecione **"Run 'Main.main()'"**.
 
-As instruções podem variar um pouco dependendo da IDE.
+#### Para Eclipse:
+1.  Vá em `File` -> `Import...`.
+2.  Selecione `General` -> `Existing Projects into Workspace` e clique em `Next`.
+3.  Clique em `Browse...` ao lado de "Select root directory" e navegue até a pasta do projeto.
+4.  Clique em `Finish`.
+5.  Localize o arquivo `Main.java` dentro de `src/app` no *Package Explorer*.
+6.  Clique com o botão direito no arquivo e selecione **`Run As` > `Java Application`**.
 
-#### Para IntelliJ IDEA (Recomendado)
+### Opção 2: Executando pela Linha de Comando (Universal)
 
-1.  Abra o IntelliJ IDEA.
-2.  Na tela de boas-vindas, clique em **Open**.
-3.  Navegue até o diretório onde você clonou o projeto e selecione a pasta.
-4.  O IntelliJ irá detectar e configurar o projeto automaticamente.
+Este método funciona em qualquer sistema com JDK instalado e garante a execução sem depender de um IDE.
 
-#### Para Eclipse
+1.  Abra um terminal (ou Prompt de Comando) e navegue até a pasta principal do projeto (a pasta que contém o diretório `src`).
+2.  **Compile o código:**
+    Execute o comando abaixo. Ele criará uma pasta `bin` para os arquivos compilados (`.class`).
 
-1.  Abra o Eclipse.
-2.  Vá em `File` -> `Import...`.
-3.  Na janela de importação, expanda a pasta `General` e selecione **Existing Projects into Workspace**. Clique em **Next**.
-4.  Clique em **Browse...** ao lado de "Select root directory" e navegue até a pasta onde você clonou o projeto.
-5.  O projeto deverá aparecer na lista "Projects". Certifique-se de que ele está marcado e clique em **Finish**.
+    *Para Linux/macOS:*
+    ```bash
+    javac -d bin src/app/*.java src/model/*.java
+    ```
 
-### 3. Execute o Programa
+    *Para Windows:*
+    ```bash
+    javac -d bin src\app\*.java src\model\*.java
+    ```
 
-1.  Na sua IDE, navegue pela estrutura de pastas do projeto (geralmente em `src`).
-2.  Encontre a classe principal, que contém o método `main`. De acordo com a especificação, ela deve se chamar `Principal.java`.
-3.  Clique com o botão direito no arquivo `Principal.java`.
-4.  Selecione a opção para executar:
-    -   No **IntelliJ IDEA**: `Run 'Principal.main()'`.
-    -   No **Eclipse**: `Run As` -> `Java Application`.
+3.  **Execute o programa:**
+    Após a compilação bem-sucedida, execute o comando a seguir. Ele informa ao Java para usar a pasta `bin` como classpath (`-cp`) e executar a classe `Main` do pacote `app`.
 
-O menu interativo do programa será exibido no console da sua IDE. Siga as instruções na tela para usar o cofrinho.
+    ```bash
+    java -cp bin app.Main
+    ```
+
+O menu interativo do cofrinho será exibido no seu terminal.
